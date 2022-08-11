@@ -9,10 +9,15 @@ To get going with a Kubernetes cluster running ArgoCD, run the following:
 
 `kubectl apply -f bootstrap.yaml`
 
+### Alerting setup 
+
+<img src="images/2.png" width="450px;">
+
 ## Prerequisites
 
 - MicroK8s as either stand alone or cluster
 - Distributed storage on MicroK8s `microk8s enable mayastor`
+
 ## Hacks
 
 Prometheus CRD's when used with ArgoCD apply can get big, so here is a hack to get arond the sync errors
