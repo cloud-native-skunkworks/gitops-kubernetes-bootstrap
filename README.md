@@ -13,3 +13,9 @@ To get going with a Kubernetes cluster running ArgoCD, run the following:
 
 - MicroK8s as either stand alone or cluster
 - Distributed storage on MicroK8s `microk8s enable mayastor`
+## Hacks
+
+Prometheus CRD's when used with ArgoCD apply can get big, so here is a hack to get arond the sync errors
+Thanks to [this](https://blog.ediri.io/kube-prometheus-stack-and-argocd-how-workarounds-are-born) guide.
+
+kubectl replace -k  hacks/ -n observability
