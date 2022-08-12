@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cats
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  annotations:
+   link.argocd.argoproj.io/external-link: https://app.komodor.com/main/deep-dive/alex-jones.demo-cats.cats
+spec:
+ project: default
+ source:
+  repoURL: 'https://github.com/AlexsJones/cats'
+  path: .
+  targetRevision: HEAD
+  helm:
+    valueFiles:
+      - values.yaml
+    parameters:
+      - name: image.tag
+        value: 0.0.1
+      - name: storageclass
+        value: {{ .Values.storageClass }}
+ destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: cats
+ syncPolicy:
+  automated: {}
+  syncOptions:
+    - CreateNamespace=true

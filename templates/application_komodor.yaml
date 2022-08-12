@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: komodor
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+ project: default
+ source:
+  repoURL: 'https://github.com/komodorio/helm-charts'
+  path: charts/k8s-watcher
+  targetRevision: HEAD
+  helm:
+    parameters:
+        - name: watcher.clustername
+          value: {{ .Values.clustername }}
+        - name: watcher.actions.basic
+          value: 'true'
+        - name: watcher.actions.advanced
+          value: 'true'
+        - name: apiKey
+          value: {{ .Values.komodorkey }}
+ destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: komodor
+ syncPolicy:
+  automated: {}
+  syncOptions:
+    - CreateNamespace=true

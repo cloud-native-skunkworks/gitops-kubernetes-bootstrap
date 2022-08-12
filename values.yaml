@@ -1,0 +1,4 @@
+storageClass: "do-block-storage"
+pdkey: "not-set"
+komodorkey: "not-set"
+clustername: demo

@@ -1,0 +1,64 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: observability
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+    link.argocd.argoproj.io/external-link: https://app.komodor.com/main/deep-dive/alex-jones.demo-observability.prometheus-observability-kube-prometh-prometheus
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: 'https://prometheus-community.github.io/helm-charts'
+    targetRevision: 39.2.1
+    helm:
+      skipCrds: true
+      values: |
+        alertmanager:
+          config:
+            route:
+              group_by: ['namespace']
+              group_wait: 30s
+              group_interval: 5m
+              repeat_interval: 12h
+              receiver: default
+              routes:
+              - receiver: default
+                matchers:
+                  - alertname =~ "InfoInhibitor|Watchdog"
+            receivers:
+              - name: default
+                pagerduty_configs:
+                - service_key: {{ .Values.pdkey }}
+        prometheus:
+          prometheusSpec:
+            storageSpec:
+              volumeClaimTemplate:
+                spec:
+                  storageClassName: {{ .Values.storageClass }}
+                  accessModes: ["ReadWriteOnce"]
+                  resources:
+                    requests:
+                      storage: 15Gi
+        grafana:
+          service:
+            type: LoadBalancer
+          additionalDataSources:
+            - name: loki
+              type: loki
+              url: http://loki.observability.svc.cluster.local:3100
+            - name: tempo
+              type: tempo
+              url: http://tempo.observability.svc.cluster.local:3100
+
+
+    chart: kube-prometheus-stack
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: observability
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
