@@ -35,5 +35,4 @@ kind: ClusterIssuer
 metadata:
   name: letsencrypt-ci
 spec:
-  ca:
-    secretName: ca-key-pair
+  selfSigned: {}
