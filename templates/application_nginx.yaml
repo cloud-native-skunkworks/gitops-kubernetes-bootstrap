@@ -43,7 +43,8 @@ spec:
         backend:
           service:
             name: observability-grafana
-            port: 80
+            port:
+                number: 80
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -67,5 +68,6 @@ spec:
         backend:
           service:
             name: argocd-server
-            port: 80
+            port: 
+                number: 80
 {{- end }}
