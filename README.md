@@ -13,8 +13,17 @@ The goal is to setup a production like set of workloads ( observability, securit
 Workloads deployed through ArgoCD.
 Configuration of the application is done via the `bootstrap` root app that has it's own configuration within `values.yaml`. This is propagated into the child apps.
 
+When looking at the wider business context, we see how the applications in this repository can feed more broadly back into the business.
+
+<img src="images/6.png" width="1000px;">
+
+### GitOps
+
+As mentioned this repository focuses on gitOps with Argocd.
+Below is an example of the applications deployed in various waves.
 
 <img src="images/5.png" width="650px;">
+
 
 ## Prerequisites
 
@@ -41,3 +50,13 @@ Check `values.yaml` and adjust as required
 
 Prometheus CRD's when used with ArgoCD apply can get big, so here is a hack to get arond the sync errors
 Thanks to [this](https://blog.ediri.io/kube-prometheus-stack-and-argocd-23-how-to-remove-a-workaround) guide.
+
+### Software tooling BOM
+
+- kubectl
+- kubectx
+- k9s
+- jq
+- kustomize
+- helm
+- sshuttle
