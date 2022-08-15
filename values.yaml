@@ -3,3 +3,5 @@ pdkey:
 komodor:
   key:
   clustername:
+# Set this to create nginx for argocd and other services
+domain: 

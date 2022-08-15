@@ -29,3 +29,11 @@ spec:
     automated: {}
     syncOptions:
       - CreateNamespace=true
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-ci
+spec:
+  ca:
+    secretName: ca-key-pair
