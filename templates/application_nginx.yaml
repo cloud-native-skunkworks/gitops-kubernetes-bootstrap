@@ -41,8 +41,9 @@ spec:
       - path: /
         pathType: Prefix
         backend:
-          serviceName: observability-grafana
-          servicePort: 80
+          service:
+            name: observability-grafana
+            port: 80
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -64,6 +65,7 @@ spec:
       - path: /
         pathType: Prefix
         backend:
-          serviceName: argocd-server
-          servicePort: 80
+          service:
+            name: argocd-server
+            port: 80
 {{- end }}
