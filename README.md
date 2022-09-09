@@ -27,7 +27,6 @@ Below is an example of the applications deployed in various waves.
 
 ## Prerequisites
 
-- Join the Komodor community slack [here](https://join.slack.com/share/enQtMzkxODc1NTc0OTgzMS1lN2RkNmVlZjJiYmU5NGE0NDVhOTEzMzFjOGVlMzk3NzY0NzU4ZGU2YjBhYzZhNGIyZTUyNjZiYmM2NDFkZjY0)
 - Spin up a Kubernetes cluster on your favourite cloud provider or hardware
 
 - Setup argocd
