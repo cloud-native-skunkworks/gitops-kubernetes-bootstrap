@@ -17,7 +17,7 @@ spec:
     helm:
       parameters:
       - name: gateway.enabled
-        value: false
+        value: "false"
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: observability
