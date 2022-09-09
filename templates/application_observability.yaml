@@ -30,7 +30,7 @@ spec:
             receivers:
               - name: default
                 pagerduty_configs:
-                - service_key: {{ .Values.pdkey }}
+                - service_key: {{ .Values.observability.pdkey }}
         prometheus:
           prometheusSpec:
             storageSpec:
