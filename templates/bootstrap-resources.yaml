@@ -12,10 +12,10 @@ spec:
     path: bootstrap-resources
     repoURL: https://github.com/cloud-native-skunkworks/gitops-kubernetes-bootstrap
     targetRevision: HEAD
-  helm:
-    parameters:
-      - name: domain
-        value: {{ .Values.domain }}
+    helm:
+      parameters:
+        - name: domain
+          value: {{ .Values.domain }}
   syncPolicy:
     automated:
       selfHeal: true
