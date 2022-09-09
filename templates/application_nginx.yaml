@@ -21,16 +21,7 @@ spec:
     - CreateNamespace=true
 ---
 {{- if .Values.domain }}
----
-apiVersion: cert-manager.io/v1
-kind: ClusterIssuer
-metadata:
-  name: letsencrypt-ci
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-spec:
-  selfSigned: {}
----
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:

@@ -4,7 +4,7 @@ metadata:
   name: logging
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-wave: "2"
     link.argocd.argoproj.io/external-link: https://app.komodor.com/main/deep-dive/alex-jones.demo-observability.logging-loki-distributed-ingester
   finalizers:
   - resources-finalizer.argocd.argoproj.io
