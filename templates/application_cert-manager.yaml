@@ -28,12 +28,4 @@ spec:
     automated: {}
     syncOptions:
       - CreateNamespace=true
----
-apiVersion: cert-manager.io/v1
-kind: ClusterIssuer
-metadata:
-  name: letsencrypt-ci
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-spec:
-  selfSigned: {}
+
