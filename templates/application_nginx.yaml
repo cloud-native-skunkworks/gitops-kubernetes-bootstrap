@@ -17,5 +17,7 @@ spec:
     repoURL: https://helm.nginx.com/stable
     targetRevision: 0.14.0
   syncPolicy:
+    automated:
+      prune: true
     syncOptions:
     - CreateNamespace=true
