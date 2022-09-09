@@ -1,6 +1,9 @@
 storageClass: "mayastor-3"
 pdkey:
+trivy:
+  enable: false
 komodor:
+  enable: false
   key:
   clustername:
 # Set this to create nginx for argocd and other services
