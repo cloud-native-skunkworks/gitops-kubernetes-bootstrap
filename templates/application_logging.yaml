@@ -5,14 +5,13 @@ metadata:
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "2"
-    link.argocd.argoproj.io/external-link: https://app.komodor.com/main/deep-dive/alex-jones.demo-observability.logging-loki-distributed-ingester
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
     repoURL: 'https://grafana.github.io/helm-charts'
-    targetRevision: 0.54.0
+    targetRevision: 0.56.7
     chart: loki-distributed
   destination:
     server: 'https://kubernetes.default.svc'
