@@ -5,7 +5,6 @@ metadata:
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "0"
-    link.argocd.argoproj.io/external-link: https://app.komodor.com/main/deep-dive/alex-jones.demo-cert-manager.cert-manager
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -34,5 +33,7 @@ apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
   name: letsencrypt-ci
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   selfSigned: {}
