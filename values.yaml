@@ -1,4 +1,4 @@
-storageClass: "mayastor-1"
+storageClass: "mayastor-3"
 pdkey:
 komodor:
   key:
