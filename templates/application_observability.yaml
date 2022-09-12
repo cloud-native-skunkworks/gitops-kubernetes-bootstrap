@@ -33,6 +33,7 @@ spec:
                 - service_key: {{ .Values.observability.pdkey }}
         prometheus:
           prometheusSpec:
+            retention: {{ .Values.observability.retention }}
             storageSpec:
               volumeClaimTemplate:
                 spec:
@@ -40,7 +41,7 @@ spec:
                   accessModes: ["ReadWriteOnce"]
                   resources:
                     requests:
-                      storage: 15Gi
+                      storage: {{ .Values.observability.storageSize }}
         grafana:
           service:
             type: LoadBalancer
