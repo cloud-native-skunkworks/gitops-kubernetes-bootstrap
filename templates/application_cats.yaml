@@ -18,7 +18,7 @@ spec:
       - values.yaml
     parameters:
       - name: image.tag
-        value: 0.0.1
+        value: main
       - name: storageclass
         value: {{ .Values.storageClass }}
  destination:
