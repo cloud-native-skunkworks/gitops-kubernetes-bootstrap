@@ -37,7 +37,7 @@ spec:
             storageSpec:
               volumeClaimTemplate:
                 spec:
-                  storageClassName: {{ .Values.storageClass }}
+                  storageClassName: {{ .Values.observability.storageClass }}
                   accessModes: ["ReadWriteOnce"]
                   resources:
                     requests:

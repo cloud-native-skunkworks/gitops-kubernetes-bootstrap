@@ -1,9 +1,14 @@
 # Global
 ## Set this to create nginx for argocd and other services
 domain: cnskunkworks.io 
-storageClass: "mayastor-3"
+storage:
+  local:
+    enable: true
+cats:
+  storageClass: "local-path"
 # Application specific
 observability:
+  storageClass: "local-path"
   pdkey:
   storageSize: 10Gi
   retention: 5d
