@@ -15,9 +15,9 @@ spec:
   path: local-path-provisioner
   targetRevision: HEAD
   helm:
-  parameters:
-      - name: rbac.create
-        value: "true"
+    parameters:
+        - name: rbac.create
+          value: "true"
  destination:
   server: 'https://kubernetes.default.svc'
   namespace: local-path-storage
