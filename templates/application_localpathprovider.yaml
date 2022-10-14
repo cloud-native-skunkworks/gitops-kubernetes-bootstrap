@@ -16,7 +16,7 @@ spec:
   targetRevision: HEAD
   helm:
   parameters:
-      - name: rbac.create"
+      - name: rbac.create
         value: "true"
  destination:
   server: 'https://kubernetes.default.svc'
