@@ -5,7 +5,7 @@ storageClass: "mayastor-3"
 # Application specific
 observability:
   pdkey:
-  storageSize: 50Gi
+  storageSize: 10Gi
   retention: 5d
 trivy:
   enable: false
