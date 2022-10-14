@@ -12,7 +12,7 @@ spec:
  project: default
  source:
   repoURL: 'https://github.com/rancher/local-path-provisioner.git'
-  path: local-path-provisioner
+  path: deploy/chart/local-path-provisioner
   targetRevision: HEAD
   helm:
     parameters:
