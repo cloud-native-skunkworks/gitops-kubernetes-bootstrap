@@ -10,7 +10,7 @@ spec:
  project: default
  source:
   repoURL: 'https://actions-runner-controller.github.io/actions-runner-controller'
-  chart: actions-runner-controller/actions-runner-controller
+  chart: actions-runner-controller
   targetRevision: 0.21.0
   helm:
     parameters:
