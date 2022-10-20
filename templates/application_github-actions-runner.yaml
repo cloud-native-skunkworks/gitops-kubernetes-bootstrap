@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cats
+  name: github-actions-runner
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -11,12 +11,10 @@ metadata:
 spec:
  project: default
  source:
-  repoURL: 'https://github.com/AlexsJones/cats'
-  path: .
-  targetRevision: HEAD
+  repoURL: 'https://actions-runner-controller.github.io/actions-runner-controller'
+  chart: actions-runner-controller/actions-runner-controller
+  targetRevision: 0.21.0
   helm:
-    valueFiles:
-      - values.yaml
     parameters:
       - name: authSecret.create
         value: "true"
