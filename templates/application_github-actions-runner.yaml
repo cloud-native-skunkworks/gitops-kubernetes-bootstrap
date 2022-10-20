@@ -1,0 +1,32 @@
+{{- if .Values.github-actions-runner.enable }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cats
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  annotations:
+   link.argocd.argoproj.io/external-link: https://app.komodor.com/main/deep-dive/alex-jones.demo-cats.cats
+spec:
+ project: default
+ source:
+  repoURL: 'https://github.com/AlexsJones/cats'
+  path: .
+  targetRevision: HEAD
+  helm:
+    valueFiles:
+      - values.yaml
+    parameters:
+      - name: authSecret.create
+        value: "true"
+      - name: authSecret.github_token
+        value: {{ .Values.github-actions-runner.token }}
+ destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: actions-runner-system
+ syncPolicy:
+  automated: {}
+  syncOptions:
+    - CreateNamespace=true
+{{- end }}

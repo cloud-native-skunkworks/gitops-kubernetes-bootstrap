@@ -20,3 +20,6 @@ komodor:
   clustername:
 logging:
   enable: true
+github-actions-runner:
+  enable: true
+  token: ""
