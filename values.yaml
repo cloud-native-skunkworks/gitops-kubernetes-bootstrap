@@ -4,9 +4,12 @@ domain: cnskunkworks.io
 storage:
   local:
     enable: true
+# Application specific
+githubactionsrunner:
+  enable: true
+  token: ""
 cats:
   storageClass: "local-path"
-# Application specific
 observability:
   storageClass: "local-path"
   pdkey:
@@ -20,6 +23,3 @@ komodor:
   clustername:
 logging:
   enable: true
-github-actions-runner:
-  enable: true
-  token: ""

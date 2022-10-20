@@ -5,8 +5,6 @@ metadata:
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
-  annotations:
-   link.argocd.argoproj.io/external-link: https://app.komodor.com/main/deep-dive/alex-jones.demo-cats.cats
 spec:
  project: default
  source:
