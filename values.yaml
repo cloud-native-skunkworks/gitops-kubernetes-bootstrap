@@ -1,6 +1,7 @@
 # Global
-## Set this to create nginx for argocd and other services
-domain: cnskunkworks.io 
+## Set the domain to create nginx for argocd and other service ingress
+domain: 
+## Set local if you wish to use "local-path" in your cluster 
 storage:
   local:
     enable: true
