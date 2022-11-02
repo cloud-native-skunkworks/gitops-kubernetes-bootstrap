@@ -1,0 +1,10 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: default-ip-space
+  namespace: metallb-system
+spec:
+  addresses:
+{ range .Values.metallb.addresspool }
+  - { . }
+{ endfor }
