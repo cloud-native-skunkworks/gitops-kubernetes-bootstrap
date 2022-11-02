@@ -17,9 +17,23 @@ When looking at the wider business context, we see how the applications in this 
 
 
 
-
 <img src="images/5.png" width="650px;">
 
+### Default applications
+
+| Application            | Link                                                    |
+|------------------------|---------------------------------------------------------|
+| Cats                   | https://github.com/AlexsJones/cats                      |
+| Cert manager           | https://charts.jetstack.io                              |
+| Komodor                | https://github.com/komodorio/helm-charts                |
+| Observability CRDS     | https://github.com/prometheus-community/helm-charts.git |
+| Local path provisioner | https://github.com/rancher/local-path-provisioner.git   |
+| Logging                | https://grafana.github.io/helm-charts                   |
+| Metallb                | https://metallb.github.io/metallb                       |
+| Observability          | https://prometheus-community.github.io/helm-charts      |
+| Nginx                  | https://helm.nginx.com/stable                           |
+| Trivy                  | https://aquasecurity.github.io/helm-charts/             |
+| Bootstrap resources    |                                                         |
 
 ## Prerequisites
 
