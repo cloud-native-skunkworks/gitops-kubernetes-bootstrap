@@ -7,7 +7,7 @@ storage:
     enable: true
 # Application specific
 githubactionsrunner:
-  enable: true
+  enable: false
   token: ""
 cats:
   storageClass: "local-path"
@@ -17,7 +17,7 @@ observability:
   storageSize: 10Gi
   retention: 5d
 trivy:
-  enable: false
+  enable: true
 komodor:
   enable: false
   key:
