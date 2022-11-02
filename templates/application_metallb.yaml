@@ -13,12 +13,10 @@ spec:
   repoURL: 'https://metallb.github.io/metallb'
   chart: metallb
   targetRevision: 0.13.7
-  helm:
-    parameters:
-        - name: prometheus.serviceMonitor.enabled
-          value: "true"
  destination:
   server: 'https://kubernetes.default.svc'
   namespace: metallb-system
  syncPolicy:
   automated: {}
+  syncOptions:
+    - CreateNamespace=true

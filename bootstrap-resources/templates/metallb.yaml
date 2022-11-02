@@ -5,6 +5,4 @@ metadata:
   namespace: metallb-system
 spec:
   addresses:
-{ range .Values.metallb.addresspool }
-  - { . }
-{ endfor }
+  - {{ .Values.metallb.addresspool}}

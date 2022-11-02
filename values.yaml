@@ -25,5 +25,6 @@ komodor:
 logging:
   enable: true
 metallb:
-  addresspool:
-    - 192.168.10.0/24
+# This only passes through to the bootstrap resources a single address pool, 
+# you can use a range if you you want to do something more complex
+  addresspool: 192.168.88.70/24
