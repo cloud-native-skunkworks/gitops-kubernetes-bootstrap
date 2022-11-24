@@ -1,7 +1,5 @@
 ## gitops-cluster-bootstrap
 
-<img src="images/1.png" width="450px;">
-
 This is an app-of-apps style start up repository for ArgoCD.
 
 The goal is to setup a production like set of workloads ( observability, security and example applications ).
@@ -15,9 +13,6 @@ When looking at the wider business context, we see how the applications in this 
 
 <img src="images/4.png" width="1000px;">
 
-
-
-<img src="images/5.png" width="650px;">
 
 ### Default applications
 

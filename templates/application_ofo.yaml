@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: open-feature-operator
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   destination:
     namespace: open-feature-operator-system
