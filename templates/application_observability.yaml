@@ -44,7 +44,7 @@ spec:
                       storage: {{ .Values.observability.storageSize }}
         grafana:
           service:
-            type: LoadBalancer
+            type: ClusterIP
           additionalDataSources:
             - name: loki
               type: loki

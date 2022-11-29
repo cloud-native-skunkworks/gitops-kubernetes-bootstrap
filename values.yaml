@@ -17,7 +17,7 @@ observability:
   storageSize: 10Gi
   retention: 5d
 trivy:
-  enable: true
+  enable: false
 komodor:
   enable: false
   key:
