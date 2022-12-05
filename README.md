@@ -11,6 +11,15 @@ Configuration of the application is done via the `bootstrap` root app that has i
 
 When looking at the wider business context, we see how the applications in this repository can feed more broadly back into the business.
 
+### bootstrap
+
+This folder contains application templates. You can either add a helm chart or git repository as the source. You can copy an existing application or import some you've written before for argocd.
+
+
+#### bootstrap-resources
+
+This folder contains the resources that are used by the bootstrap application. Such things might be application specific resources like network policies, ingress settings or service accounts. The idea is that this folder is continuously and automatically synced with the cluster. **It helps to get around the problem of having to make a another gitOps repo just for settings of an app.**
+
 <img src="images/4.png" width="1000px;">
 
 
