@@ -37,7 +37,7 @@ This folder contains the resources that are used by the bootstrap application. S
 | Observability          | https://prometheus-community.github.io/helm-charts      |
 | Nginx                  | https://helm.nginx.com/stable                           |
 | Trivy                  | https://aquasecurity.github.io/helm-charts/             |
-| Bootstrap resources    |                                                         |
+
 
 ## Prerequisites
 
