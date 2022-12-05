@@ -4,6 +4,12 @@ This is an app-of-apps style start up repository for ArgoCD.
 
 The goal is to setup a production like set of workloads ( observability, security and example applications ).
 
+_See the video here_
+
+<a href="https://youtu.be/GAu1INNeE7E">
+<img src="images/yt.png" width="600px;">
+</a>
+
 ## Workloads
 
 Workloads are deployed through ArgoCD in an app-of-apps style deployment.
