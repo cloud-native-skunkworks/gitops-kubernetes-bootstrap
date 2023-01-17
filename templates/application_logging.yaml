@@ -17,7 +17,13 @@ spec:
     helm:
       parameters:
       - name: gateway.enabled
-        value: "false"
+        value: "true"
+      - name: querier.persistence.storageClass
+        value: "{{ .Values.observability.storageClass }}"
+      - name: compactor.persistence.storageClass
+        value: "{{ .Values.observability.storageClass }}"
+      - name: ingestor.persistence.storageClass
+        value: "{{ .Values.observability.storageClass }}"
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: observability
