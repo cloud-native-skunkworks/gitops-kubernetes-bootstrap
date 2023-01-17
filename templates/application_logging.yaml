@@ -16,12 +16,11 @@ spec:
     chart: loki-simple-scalable
     helm:
       parameters:
-      - name: CommonConfig.replication_factor
-        value: "1"
-      - name: storage.type
-        value: 'filesystem'
-      - name: singleBinary.persistence.storageClassName
+      - name: persistence.enabled
+        value: "true"
+      - name: persistance.storageClassName
         value: 'local-path'
+
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: observability
