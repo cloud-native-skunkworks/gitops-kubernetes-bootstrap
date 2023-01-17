@@ -12,12 +12,14 @@ spec:
   project: default
   source:
     repoURL: 'https://grafana.github.io/helm-charts'
-    targetRevision: 3.8.0
-    chart: loki
+    targetRevision: 1.8.11
+    chart: loki-simple-scalable
     helm:
       parameters:
-      - name: gateway.enabled
-        value: "false"
+      - name: loki.CommonConfig.replication_factor
+        value: "1"
+      - name: loki.storage.type
+        value: 'filesystem'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: observability
