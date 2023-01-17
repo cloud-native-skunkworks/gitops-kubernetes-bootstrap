@@ -12,8 +12,8 @@ spec:
   project: default
   source:
     repoURL: 'https://grafana.github.io/helm-charts'
-    targetRevision: 0.56.7
-    chart: loki-distributed
+    targetRevision: 3.8.0
+    chart: loki
     helm:
       parameters:
       - name: gateway.enabled
