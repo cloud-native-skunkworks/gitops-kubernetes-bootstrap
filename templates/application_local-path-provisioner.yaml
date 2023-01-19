@@ -18,6 +18,8 @@ spec:
     parameters:
         - name: rbac.create
           value: "true"
+        - name: storageClass.defaultClass
+          value: "true"
  destination:
   server: 'https://kubernetes.default.svc'
   namespace: local-path-storage
