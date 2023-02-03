@@ -12,18 +12,8 @@ spec:
   project: default
   source:
     repoURL: 'https://grafana.github.io/helm-charts'
-    targetRevision: 0.69.0
-    chart: loki-distributed
-    helm:
-      parameters:
-      - name: gateway.enabled
-        value: "true"
-      - name: querier.persistence.storageClass
-        value: "{{ .Values.observability.storageClass }}"
-      - name: compactor.persistence.storageClass
-        value: "{{ .Values.observability.storageClass }}"
-      - name: ingestor.persistence.storageClass
-        value: "{{ .Values.observability.storageClass }}"
+    targetRevision: 3.10.0
+    chart: loki
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: observability
