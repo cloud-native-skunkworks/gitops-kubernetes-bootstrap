@@ -11,8 +11,8 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    chart: ofo
+    chart: open-feature-operator
     repoURL: https://open-feature.github.io/open-feature-operator/
-    targetRevision: v0.2.20
+    targetRevision: v0.2.29
   syncPolicy:
     automated: {}
