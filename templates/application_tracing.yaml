@@ -1,0 +1,30 @@
+{{- if .Values.logging.enable }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tempo
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: 'https://grafana.github.io/helm-charts'
+    targetRevision: 2.9.9
+    chart: tempo
+    helm:
+      releaseName: tempo
+      parameters:
+      - name: grafana.sidecar.datasources.enabled
+        value: "false"
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: observability
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+{{- end }}
