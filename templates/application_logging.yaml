@@ -16,6 +16,9 @@ spec:
     chart: loki-stack
     helm:
       releaseName: loki
+      parameters:
+      - name: grafana.sidecar.datasources.enabled
+        value: "false"
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: observability
