@@ -15,6 +15,7 @@ spec:
     helm:
       skipCrds: true
       values: |
+      {{ if .Values.observability.pdkey }}
         alertmanager:
           config:
             route:
@@ -31,6 +32,7 @@ spec:
               - name: default
                 pagerduty_configs:
                 - service_key: {{ .Values.observability.pdkey }}
+      {{ end }}
         prometheus:
           prometheusSpec:
             retention: {{ .Values.observability.retention }}
