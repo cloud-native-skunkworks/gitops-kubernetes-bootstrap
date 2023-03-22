@@ -1,0 +1,32 @@
+{{- if .Values.datadog.enable }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: datadog
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+ project: default
+ source:
+  repoURL: 'https://github.com/DataDog/helm-charts'
+  path: .
+  targetRevision: HEAD
+  helm:
+    valueFiles:
+      - values.yaml
+    parameters:
+      - name: datadog.appKey
+        value: 'Set This'
+      - name: datadog.site
+        value: 'datadoghq.com'
+      - name: datadog.clusterName
+        value: {{ .Values.clustername }}
+ destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: datadog
+ syncPolicy:
+  automated: {}
+  syncOptions:
+    - CreateNamespace=true
+{{- end }}
