@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: .
-    repoURL: https://github.com/cloud-native-skunkworks/gitops-kubernetes-bootstrap
+    repoURL: https://github.com/mmontreuil-bjl/gitops-kubernetes-bootstrap/blob/main/bootstrap.yaml
     targetRevision: HEAD
   syncPolicy:
     automated:
