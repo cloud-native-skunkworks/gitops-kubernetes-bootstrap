@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: bootstrap-resources
-    repoURL: https://github.com/mmontreuil-bjl/gitops-kubernetes-bootstrap/blob/main/bootstrap.yaml
+    repoURL: https://github.com/mmontreuil-bjl/gitops-kubernetes-bootstrap
     targetRevision: HEAD
     helm:
       parameters:
