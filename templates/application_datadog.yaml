@@ -10,7 +10,8 @@ spec:
  project: default
  source:
   repoURL: 'https://github.com/DataDog/helm-charts'
-  path: 'charts/datadog/'
+  path: 'charts/datadog'
+  chart: 'datadog/datadog'
   targetRevision: HEAD
   helm:
     valueFiles:
@@ -30,3 +31,28 @@ spec:
   syncOptions:
     - CreateNamespace=true
 {{- end }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  destination:
+    namespace: nginx-ingress
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: nginx-ingress
+    helm:
+      parameters:
+      - name: controller.kind
+        value: daemonset
+    repoURL: https://helm.nginx.com/stable
+    targetRevision: 0.14.0
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
