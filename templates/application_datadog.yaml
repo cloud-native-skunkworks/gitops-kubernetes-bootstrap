@@ -11,7 +11,7 @@ spec:
  source:
   repoURL: 'https://helm.datadoghq.com'
   chart: 'datadog'
-  targetRevision: HEAD
+  targetRevision: 3.21.0
   helm:
     valueFiles:
       - values.yaml
