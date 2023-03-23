@@ -9,10 +9,8 @@ metadata:
 spec:
  project: default
  source:
-  repoURL: 'https://github.com/DataDog/helm-charts'
-  path: 'charts/datadog'
-  chart: 'datadog/datadog'
-  targetRevision: HEAD
+  repoURL: 'https://helm.datadoghq.com'
+  chart: 'datadog'
   helm:
     valueFiles:
       - values.yaml
