@@ -18,10 +18,6 @@ observability:
   retention: 5d
 trivy:
   enable: false
-komodor:
-  enable: false
-  key:
-  clustername:
 logging:
   enable: true
 metallb:

@@ -35,6 +35,7 @@ spec:
       {{ end }}
         prometheus:
           prometheusSpec:
+            serviceMonitorSelectorNilUsesHelmValues: false
             retention: {{ .Values.observability.retention }}
             storageSpec:
               volumeClaimTemplate:

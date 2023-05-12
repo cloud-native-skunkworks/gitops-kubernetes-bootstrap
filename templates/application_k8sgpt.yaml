@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: k8sgpt
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: 'https://charts.k8sgpt.ai/'
+    targetRevision: 0.0.13
+    helm:
+      parameters:
+      - name: serviceMonitor.enabled
+        value: "true"
+      
+    chart: k8sgpt-operator
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: k8sgpt-operator-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
