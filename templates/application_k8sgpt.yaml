@@ -14,9 +14,9 @@ spec:
     targetRevision: 0.0.14
     helm:
       parameters:
-      - name: serviceMonitor.enabled:
+      - name: serviceMonitor.enabled
         value: "true"
-      - name: grafanaDashboard.enabled:
+      - name: grafanaDashboard.enabled
         value: "true"
     chart: k8sgpt-operator
   destination:
