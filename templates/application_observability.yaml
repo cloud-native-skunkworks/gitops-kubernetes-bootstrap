@@ -46,6 +46,9 @@ spec:
                     requests:
                       storage: {{ .Values.observability.storageSize }}
         grafana:
+          sidecar:
+            dashboards:
+              searchNamespace: ALL
           service:
             type: ClusterIP
           additionalDataSources:
