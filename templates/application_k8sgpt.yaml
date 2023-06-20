@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: 'https://charts.k8sgpt.ai/'
-    targetRevision: 0.0.16
+    targetRevision: 0.0.19
     helm:
       parameters:
       - name: serviceMonitor.enabled
