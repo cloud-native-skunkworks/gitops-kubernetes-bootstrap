@@ -1,6 +1,6 @@
 # Global
 ## Set the domain to create nginx for argocd and other service ingress
-domain: 
+domain: "cluster.pyrovelocity.net"
 ## Set local if you wish to start the local path provisioner for "local-path" in your cluster 
 storage:
   local:
