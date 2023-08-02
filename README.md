@@ -35,7 +35,7 @@ This folder contains the resources that are used by the bootstrap application. S
 |------------------------|---------------------------------------------------------|
 | Cats                   | https://github.com/AlexsJones/cats                      |
 | Cert manager           | https://charts.jetstack.io                              |
-| Komodor                | https://github.com/komodorio/helm-charts                |
+| K8sgpt                 | https://charts.k8sgpt.ai/                               |
 | Observability CRDS     | https://github.com/prometheus-community/helm-charts.git |
 | Local path provisioner | https://github.com/rancher/local-path-provisioner.git   |
 | Logging                | https://grafana.github.io/helm-charts                   |
