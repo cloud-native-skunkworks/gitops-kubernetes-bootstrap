@@ -6,9 +6,6 @@ storage:
   local:
     enable: true
 # Application specific
-githubactionsrunner:
-  enable: false
-  token: ""
 cats:
   storageClass: "local-path"
 observability:
